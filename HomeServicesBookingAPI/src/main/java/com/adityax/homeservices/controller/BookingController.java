@@ -65,4 +65,9 @@ public class BookingController {
 
 	    return service.updateBookingStatus(id, status);
 	}
+	
+	@PatchMapping("/{id}/cancel")
+	public BookingResponse cancelBooking(@PathVariable Long id) {
+	    return service.updateBookingStatus(id, "CANCELLED");
+	}
 }
